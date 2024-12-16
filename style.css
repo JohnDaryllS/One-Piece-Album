@@ -87,6 +87,7 @@ body, html {
   .flip-card-back {
     background-color: bisque;
     transform: rotateY(180deg);
+    padding: 10px;
   }
   
   .flip-card-back img {
