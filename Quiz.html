@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Anime Quiz</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
-    <div>
-        <h1 class="text-center">Trivia Quiz</h1>
-    </div>
+    <div class="quiz-container">
+        <h1>Anime Quiz</h1>
+        <div id="quiz">
+            <p id="question"></p>
+            <div id="options"></div>
+        </div>
+        <button id="next" disabled>Next</button>
+        <p id="result"></p>
+        <button id="show-answers" style="display: none;">Show Answers</button>
+        <button id="play-again" style="display: none;">Play Again</button>
+
+    </div>    
+    <script src="quiz.js"></script>
 </body>
 </html>
