@@ -151,12 +151,12 @@ function restartQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     userAnswers.length = 0;  // Reset user answers
-    shuffleArray(questions);
+    shuffleArray(questions); // Shuffle questions again
     document.getElementById('result').textContent = '';
     document.getElementById('next').style.display = 'inline-block';
     document.getElementById('show-answers').style.display = 'none';
     document.getElementById('play-again').style.display = 'none';
-    loadQuestion(currentQuestionIndex);
+    loadQuestion(currentQuestionIndex);  // Load the first question after restart
 }
 
 function showAnswers() {
@@ -206,4 +206,3 @@ document.getElementById('show-answers').addEventListener('click', showAnswers);
 
 // Start the quiz
 loadQuestion(currentQuestionIndex);
-
