@@ -150,13 +150,13 @@ function loadQuestion(index) {
 function restartQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-    userAnswers.length = 0;  // Reset user answers
-    shuffleArray(questions); // Shuffle questions again
+    userAnswers.length = 0;
+    shuffleArray(questions);
     document.getElementById('result').textContent = '';
     document.getElementById('next').style.display = 'inline-block';
     document.getElementById('show-answers').style.display = 'none';
     document.getElementById('play-again').style.display = 'none';
-    loadQuestion(currentQuestionIndex);  // Load the first question after restart
+    loadQuestion(currentQuestionIndex)
 }
 
 function showAnswers() {
@@ -181,7 +181,6 @@ function showAnswers() {
 document.getElementById('next').addEventListener('click', () => {
     const selectedOption = document.querySelector('input[name="option"]:checked').value;
 
-    // Store user's answer for each question
     userAnswers.push({ question: questions[currentQuestionIndex].question, answer: selectedOption });
 
     if (selectedOption === questions[currentQuestionIndex].answer) {
@@ -204,5 +203,4 @@ document.getElementById('next').addEventListener('click', () => {
 document.getElementById('play-again').addEventListener('click', restartQuiz);
 document.getElementById('show-answers').addEventListener('click', showAnswers);
 
-// Start the quiz
 loadQuestion(currentQuestionIndex);
