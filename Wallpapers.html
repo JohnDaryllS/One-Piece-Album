@@ -1,13 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Grid with Download Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: rgb(112, 95, 95);
+    }
+
+    .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 20px;
+    max-width: 1700px;
+    width: 100%;
+    box-sizing: border-box;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .download-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      border-radius: 0 0 8px 8px;
+      cursor: pointer;
+    }
+
+    .download-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .download-btn i {
+      margin-right: 8px;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 5px solid white;
+      border-radius: 10px;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+      
+      .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 1001;
+    }
+
+    .scroll-to-top:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <div>
-        <h1 class="text-center">Wallpapers Downloads</h1>
+  <div class="container">
+    <div class="card">
+      <img src="downloadable image/chibi-luffy-one-3840x2160-13063.png" alt="Placeholder Image">
+      <a href="downloadable image/chibi-luffy-one-3840x2160-13063.png" download class="download-btn">
+        <i class="fas fa-download"></i> Download
+      </a>
     </div>
+    <div class="card">
+      <img src="downloadable image/gear-5-monkey-d-6001x3841-17522.jpg" alt="Placeholder Image">
+      <a href="downloadable image/gear-5-monkey-d-6001x3841-17522.jpg" download class="download-btn">
+        <i class="fas fa-download"></i> Download
+      </a>
+    </div>
+    <div class="card">
+      <img src="downloadable image/laughing-luffy-one-5120x2880-19342 (1).jpg" alt="Placeholder Image">
+      <a href="downloadable image/laughing-luffy-one-5120x2880-19342 (1).jpg" download class="download-btn">
+        <i class="fas fa-download"></i> Download
+      </a>
+    </div>
+    <div class="card">
+      <img src="downloadable image/mackenyu-roronoa-4096x2304-12743.jpg" alt="Placeholder Image">
+      <a href="downloadable image/mackenyu-roronoa-4096x2304-12743.jpg" download class="download-btn">
+        <i class="fas fa-download"></i> Download
+      </a>
+    </div>
+    <div class="card">
+      <img src="downloadable image/monkey-d-luffy-9720x4320-16712.jpg" alt="Placeholder Image">
+      <a href="downloadable image/monkey-d-luffy-9720x4320-16712.jpg" download class="download-btn">
+        <i class="fas fa-download"></i> Download
+      </a>
+    </div>
+    <div class="card">
+        <img src="downloadable image/monkey-d-luffy-hat-7680x4320-18701.png" alt="Placeholder Image">
+        <a href="downloadable image/monkey-d-luffy-hat-7680x4320-18701.png" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/netflix-series-one-5120x2880-12848.jpg" alt="Placeholder Image">
+        <a href="downloadable image/netflix-series-one-5120x2880-12848.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/one-piece-logo-7680x4320-13103.jpg" alt="Placeholder Image">
+        <a href="downloadable image/one-piece-logo-7680x4320-13103.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/one-piece-monkey-d-5120x2880-16927.jpg" alt="Placeholder Image">
+        <a href="downloadable image/one-piece-monkey-d-5120x2880-16927.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/one-piece-straw-hat-5120x2880-17928.jpg" alt="Placeholder Image">
+        <a href="downloadable image/one-piece-straw-hat-5120x2880-17928.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/roronoa-zoro-5120x2880-18692.jpg" alt="Placeholder Image">
+        <a href="downloadable image/roronoa-zoro-5120x2880-18692.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/roronoa-zoro-5120x2880-19795.jpg" alt="Placeholder Image">
+        <a href="downloadable image/roronoa-zoro-5120x2880-19795.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/roronoa-zoro-green-5120x2880-17621.jpg" alt="Placeholder Image">
+        <a href="downloadable image/roronoa-zoro-green-5120x2880-17621.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/roronoa-zoro-green-5120x2880-18358.jpg" alt="Placeholder Image">
+        <a href="downloadable image/roronoa-zoro-green-5120x2880-18358.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/roronoa-zoro-neon-5120x2880-19829.png" alt="Placeholder Image">
+        <a href="downloadable image/roronoa-zoro-neon-5120x2880-19829.png" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/roronoa-zoro-one-5120x2880-18633.jpg" alt="Placeholder Image">
+        <a href="downloadable image/roronoa-zoro-one-5120x2880-18633.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/roronoa-zoro-one-piece-5k-5120x2880-16922.jpg" alt="Placeholder Image">
+        <a href="downloadable image/roronoa-zoro-one-piece-5k-5120x2880-16922.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/roronoa-zoro-purple-5120x2880-16930.jpg" alt="Placeholder Image">
+        <a href="downloadable image/roronoa-zoro-purple-5120x2880-16930.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/straw-hat-pirates-3840x2160-16755.png" alt="Placeholder Image">
+        <a href="downloadable image/straw-hat-pirates-3840x2160-16755.png" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="downloadable image/straw-hat-pirates-4096x2302-12722.jpg" alt="Placeholder Image">
+        <a href="downloadable image/straw-hat-pirates-4096x2302-12722.jpg" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <a href="https://via.placeholder.com/150" download class="download-btn">
+          <i class="fas fa-download"></i> Download
+        </a>
+      </div>
+  </div>
+
+  <div class="popup" id="popup">
+    <span class="popup-close" id="popup-close">&times;</span>
+    <img id="popup-img" src="" alt="Popup Image">
+  </div>
+
+  <button class="scroll-to-top" id="scrollToTop">&#8679;</button>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    const images = document.querySelectorAll('.card img');
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popup-img');
+    const popupClose = document.getElementById('popup-close');
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    images.forEach(image => {
+      image.addEventListener('click', () => {
+        popup.style.display = 'flex';
+        popupImg.src = image.src;
+      });
+    });
+
+    popupClose.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.style.display = 'flex';
+      } else {
+        scrollToTopBtn.style.display = 'none';
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
