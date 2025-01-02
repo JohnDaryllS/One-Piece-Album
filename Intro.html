@@ -45,9 +45,17 @@ video {
   font-size: 14px;
 }
 
+audio {
+  display: none;
+}
+
   </style>
 </head>
 <body>
+  <audio id="background-music" autoplay loop>
+    <source src="video/One_Piece_OST_Overtaken_EPIC_VERSION_(Drums_of_Liberation)_[_YouConvert.net_].mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
   <h1 style="color: rgb(204, 245, 57); text-align: center; margin: 80px; font-size: 50px; text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;">One Piece Openings</h1>
   <div class="video-row">
     <div class="video-container">
@@ -247,5 +255,6 @@ video {
       <p>Opening 26 - Uuuuus!</p>
     </div>
   </div>
+  <script src="musicbg.js"></script>
 </body>
 </html>
