@@ -154,3 +154,7 @@ body, html {
 .button-container button:hover {
     background-color: #0056b3;
 }
+
+audio {
+  display: none;
+}
